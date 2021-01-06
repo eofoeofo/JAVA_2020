@@ -43,13 +43,13 @@ public class Practice16 {
 			} else {
 				System.out.println("햄버거");
 			}
-			System.out.println("뽑힌 메뉴 : " + menu);
+			/* System.out.println("뽑힌 메뉴 : " + menu); */
 			System.out.print("메뉴가 마음에 드십니까? (Y/N)");
 			String result = sc.next();
 			if("Y".contentEquals(result)) {
 				break;
 			}
 		} while(again);
-		System.out.println("오늘의 메뉴는 %s 입니다." + menu);
+		/* System.out.println("오늘의 메뉴는 %s 입니다." + menu); */
 	}
 }
