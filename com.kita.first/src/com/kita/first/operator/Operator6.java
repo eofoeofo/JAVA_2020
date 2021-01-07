@@ -1,4 +1,4 @@
-package com.kita.first;
+package com.kita.first.operator;
 
 public class Operator6 {
 	public static void main (String args[]) {
