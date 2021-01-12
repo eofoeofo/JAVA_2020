@@ -7,6 +7,7 @@ public class ArrayCopy {
 		System.out.println("arr1 : " + arr1);
 		System.out.println("arr2 : " + arr2);
 		
+		
 		arr2 = new int[arr1.length];
 		
 		for(int i=0; i<arr1.length; i++) {
@@ -14,6 +15,7 @@ public class ArrayCopy {
 		}
 		System.out.println("arr1 : " + arr1);
 		System.out.println("arr2 : " + arr2);
+		
 		for(int n : arr2) {
 			System.out.println(n+",");
 		}
