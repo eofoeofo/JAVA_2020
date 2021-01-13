@@ -22,35 +22,56 @@ public class Practice29 {
 		final int LEN = 3;
 		int[] rArr  = new int[LEN]; // 컴퓨터가 뽑는 랜덤 3개
 		int[] myArr = new int[LEN];
-		int strike=0;
-		int ball=0;
-		System.out.println(rArr);
-		System.out.println(myArr);
 		System.out.println("숫자 야구 게임 시작!");
 		
-		for(int i=0; i<rArr.length; i++) {
+		for(int i=0; i<rArr.length; i++) { // 랜덤 중복 제거
 			rArr[i] = (int)(Math.random() * 9)+1;
 			for(int j=0; j<i; j++) {
 				if(rArr[i] == rArr[j]){
-					i--; // 랜덤 중복 제거
-				}
-			}
-			while(true) {
-				for(int j=0; j<LEN; j++) {
-					int num = sc.nextInt();
-					System.out.printf("값 : %d\n" , num);
-					myArr[i] = num;
-				} 
-				if (rArr[0] == myArr[0]) {
-					strike++;
-				} else if(rArr[1] == myArr[1]) {
-					strike++;
-				} else if(rArr[2] == myArr[2]) {
-					strike++;
-				} else if(myArr[3] == LEN) {
+					i--; 
 					break;
 				}
 			}
 		}
+		for(int i=0; i<LEN; i++) {
+			System.out.println(rArr[i]);
+		}
+		while(true) { // 오류 입력 경고메세지 출력
+			int strike=0;
+			int ball=0;
+			for(int i=0; i<LEN; i++) {
+				System.out.printf("값%d :\n ",i+1);
+				myArr[i] = sc.nextInt();
+				if(myArr[i]<=0 || 9<myArr[i] ) {
+					System.out.println("범위 밖 숫자를 입력 하셨습니다.");
+					i--;
+					continue;
+				}
+				for(int j=0; j<i; j++) {
+					if(myArr[j] == myArr[i]) {
+						System.out.println("중복된 숫자를 입력 하셨습니다.");
+						i--;
+						continue;
+					}
+				}
+			}
+			
+			for(int i=0; i<LEN; i++) { // 랜덤숫자와 사용자 숫자를 비교
+				if(myArr[i] == rArr[i]) {
+					strike++;
+					continue;
+				}
+				for(int j=0; j<LEN; j++) {
+					if(myArr[i] == rArr[j]) {
+						ball++;
+					}
+				}
+			}
+			System.out.printf("S : %d B : %d O : %d\n",strike,ball,LEN-strike-ball);
+			if(strike==LEN) {
+				break;
+			}
+		}
+		System.out.println("END!");
 	}
 }
