@@ -3,7 +3,7 @@ package com.kita.first.level2;
 public class Calc {
 	
 	public static void main(String[] args) {
-		Calc myCalc1 = new Calc(); // 형식이 스캐너를 사용하는것과 비슷함
+		Calc myCalc1 = new Calc(); // 형식이 스캐너를 사용하는것과 비슷함 // new Calc() < -- 생성자
 		Calc myCalc3 = new Calc(); // 같은 설계도의 다른 계산기
 		Calc myCalc2 = new Calc(); // 새로운 Calc 객체가 생성되는 의미
 		myCalc1.powerOn();
