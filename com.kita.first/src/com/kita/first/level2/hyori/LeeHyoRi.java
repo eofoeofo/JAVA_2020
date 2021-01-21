@@ -24,6 +24,7 @@ public class LeeHyoRi {
 		hr.music = "유고걸"; // 자신의 클래스 내부에서 접근이 가능하다 (public)
 		hr.sns = "인스타"; // 자신의 클래스 내부에서 접근이 가능하다 패키지가 다르면 접근 불가(default)
 		hr.star = 1000000; // 자신의 클래스 내부에서만 접근이 가능하다 (private)
+		// protected는 다른 패키지일 경우, 
 		
 		LeeHyoRi hr2 = new LeeHyoRi("인스타");
 		LeeHyoRi hr3 = new LeeHyoRi(1000000);
