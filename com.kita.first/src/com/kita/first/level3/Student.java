@@ -6,7 +6,7 @@ public class Student {
 	Book book3 = new Book(4);
 	
 	int readBooks() {
-		if(false == book1.read()) {
+		if(false == book1.read()) { // 만약 책을 다 읽었다면(false)
 			stopRead();
 			return 1;
 		}
@@ -18,7 +18,7 @@ public class Student {
 			stopRead();
 			return 3;
 		}
-		return 0;
+		return 0; // 무조건 리턴해야함
 	}
 	void stopRead() {
 		System.out.println("책을 그만 읽습니다.");

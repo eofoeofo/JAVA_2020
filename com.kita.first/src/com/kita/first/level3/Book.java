@@ -10,7 +10,7 @@ public class Book {
 	
 	boolean read() {
 		++chapter;
-		if(chapter < maxChapter) {
+		if(chapter <= maxChapter) {
 			System.out.println("책을 읽는다.");
 			return true;
 		} else { // true가 들어가면 if문이 끝나기에 else를 쓰지 않아도됨
