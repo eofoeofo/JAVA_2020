@@ -1,7 +1,22 @@
 package com.kita.first.level3;
 
+import java.util.Scanner;
+
 public class Test {
+	
 	public static void main(String[] args) {
+//		int result = Integer.parseInt(sc.next()); // 바로 담지못함(문자열로 입력받는다)
+		ScanNum sn = new ScanNum();
+		String str = sn.inputNumString();
+		int result = Utils.parseStrToInt(str);
+		sn.printMsg(result);
+//		if (result == 0) { // 0이라는건 문자열이 섞여서 에러가 터졌다는 뜻
+//			System.out.println("잘못 입력 했습니다.");
+//		} else {
+//			System.out.println("입력한 숫자 : " + result);
+//		}
+		// 메소드안에 메소드는 입력할수없다. ex) main 메소드 안에 메소드
+		
 		Animal animal = new Animal();
 		Cat cat = new Cat();
 		Dog dog = new Dog();
@@ -37,8 +52,8 @@ public class Test {
 		Student minsu = new Student();
 		
 		for(int i=1; i<=5; i++) {
-			int result = minsu.readBooks();
-			switch(result) {
+			int result22 = minsu.readBooks();
+			switch(result22) {
 			case 1: // minsu가 book1을 다 읽었을 경우
 				minsu.book1 = new ComicBook(3);
 				System.out.println("새 만화책을 가져왔다.");
@@ -67,5 +82,7 @@ public class Test {
 		
 		Lol lol = new Lol();
 		p1.playGame(lol); // 매개 변수의 다형성
+		System.out.println("--------------------------");
+		System.out.println("--------------------------");
 	}
 }
