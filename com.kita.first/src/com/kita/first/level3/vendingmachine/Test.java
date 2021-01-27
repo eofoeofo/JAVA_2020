@@ -27,7 +27,47 @@ public class Test {
 //		합계: 3700원
 		int len = 6;
 		Menu menu = new Menu(len);
+//		Menu menu2 = new Menu(8); // 방이 8개인 menu2
+		PrintV print = new PrintV();
+		Scanner sc = new Scanner(System.in);
+		// 메뉴 배열에 메뉴이름 집어 넣기
+		menu.inputArrItems();
+		// 가격 배열에 가격 집어 넣기
+		menu.inputArrPrices();
+		// 메뉴 배열에 메뉴 이름 집어 넣기 for문
+//		for(int i=0; i<len; i++) {
+//			System.out.println("메뉴 이름을 입력해 주세요.");
+//			menu.setMenuItem(i, sc.next()); // item에 메뉴 이름이 들어가야한다.
+//		}
+		
+		System.out.println("--메뉴--");
+		for(int i=1; i<=len; i++) {
+			print.printMenu(menu, i);
+		}
 		// 29라인 뒤에 해야 할 일 . 메뉴, 가격 배열에 값 입력
+		
+		// 메뉴, 가격 배열에 값 입력
+		Game game = new Game();
+		int myNum;
+		
+		while(true) {
+			myNum = game.inputNum();
+			
+			if(myNum<1 || myNum>len) {
+				System.out.println("범위 내의 숫자를 입력하세요.");
+				continue;
+			} else if(myNum == 0) {
+				break;
+			}
+			game.setCount();
+			game.sumMenuPrice(menu,myNum);
+			print.printMenu(menu,myNum);
+		}
+		game.setCount();
+		game.sumMenuPrice(menu, myNum);
+		print.printMenu(menu, myNum);
+		
+		print.printTotalPrice(game);
 		
 		Scanner scan = new Scanner(System.in);
 		String[] menuArr = {"콜라", "사이다", "캔커피", "데자와", "환타", "웰치스"};

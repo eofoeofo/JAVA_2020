@@ -35,29 +35,29 @@ public class Menu {
 		return priceArr[index];
 	}
 	// 메뉴 배열에 순차적으로 값 입력
-	void inputMenuItems(String[] arr) {
+	void inputArrItems() { // 메뉴 arr에 값을 집어 넣기에 매개변수 필요없다. menuArr에 바로 값을 집어 넣으면 된다.
 		Scanner sc = new Scanner(System.in);
-		for(int i=0; i<arr.length; i++) {
+		for(int i=0; i<menuArr.length; i++) {
 			System.out.printf("%d번째 값 입력 : ", i+1);
 			String str = sc.next();
-			arr[i] = str; 
+			menuArr[i] = str; 
 		}
 		sc.close();
 	}
 	// 가격 배열에 순차적으로 값 입력
-	void inputArrItems(int[] arr) {
+	void inputArrPrices() {
 		Scanner sc = new Scanner(System.in);
-		for(int i=0; i<arr.length; i++) {
+		for(int i=0; i<priceArr.length; i++) {
 			System.out.printf("%d번째 값 입력 : ", i+1);
 			ScanNum sn = new ScanNum();
 			String str = sn.inputNumString();
-			int result = Utils.parseStrToInt(str); // sc.nextInt(); // 내가 받은 값을 int로 받아서 result에 넣어줘라
-			if (result == 0) {
+			int num = Utils.parseStrToInt(str); // sc.nextInt(); // 내가 받은 값을 int로 받아서 result에 넣어줘라
+			if (num == 0) {
 				System.out.println("잘못 입력 하셨습니다. 다시 입력 해주세요.");
 				i--;
 				continue;
 			}
-			arr[i] = result; 
+			priceArr[i] = num; 
 		}
 		sc.close();
 	}
