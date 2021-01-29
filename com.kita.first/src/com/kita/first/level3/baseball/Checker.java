@@ -12,28 +12,22 @@ public class Checker {
 	}
 	// getter로 받아야한다
 	public static boolean check(int LEN, Baseball ball, MyBall myball) { // 배열을 바로 받지는 못하기에 배열이 담겨있는 클래스를 통째로 가져온다
-		
-	}
-	
-	// 메뉴 가격 합산
-	
-	void sumNum(int LEN) {
-		
-		for(int i=0; i<LEN; i++) { // 랜덤숫자와 사용자 숫자를 비교
-			if(myArr[i] == rArr[i]) {
-				strike++;
-				continue;
-			}
+		int s = 0;
+		int b = 0;
+		for(int i=0; i<LEN; i++) { // 랜덤숫자와 사용자 숫자를 비
 			for(int j=0; j<LEN; j++) {
-				if(myArr[i] == rArr[j]) {
-					ball++;
+				if(ball.getrArr(i) == myball.getMyNum(j))
+					if(i==j) {
+						s++;
+					} else {
+						b++;
+					}
 				}
 			}
-		}
-		System.out.printf("S : %d B : %d O : %d\n",strike,ball,LEN-strike-ball);
-		if(strike==LEN) {
-			break;
-		}
+		System.out.printf("S : %d B : %d O : %d\n",s,b,LEN-s-b);
+		
+//		boolean result = (s != LEN); // s와 LEN이 같지 않을때 true. 그래서 계속 돈다
+//		return result;
+		return (s != LEN); // 29~30와 같은 말
 	}
-	
 }

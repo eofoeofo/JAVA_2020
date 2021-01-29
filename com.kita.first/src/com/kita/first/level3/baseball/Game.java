@@ -8,9 +8,14 @@ public class Game {
 		final int LEN = 3;
 		Baseball ball = new Baseball(LEN); // 매개변수로 전달해야지 3을 인식함(Baseball이)
 		MyBall myball = new MyBall(LEN);
+		boolean result = Checker.check(LEN,ball,myball);
 		
-		do {
+		do { 
 			myball.setNumbers();
-		} while(Checker.check(LEN,ball,myball)); // new 없이 바로 받아왔기에 check에 static을 사용
+		} while(result); // new 없이 바로 받아왔기에 check에 static을 사용
+		// 리턴값이 t,f로 나와야한다
+		// while이 true일때 s와 게임 카운트가 같지 않다는 뜻
+		// while이 true때 한번 더 실행
+		System.out.println("END!");
 	}
 }

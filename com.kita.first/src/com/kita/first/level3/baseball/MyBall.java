@@ -1,5 +1,6 @@
 package com.kita.first.level3.baseball;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MyBall {
@@ -19,66 +20,30 @@ public class MyBall {
 		sc = new Scanner(System.in);
 	}
 	
-	setNumbet() {
-		
-	}
-	
-	getMyNum(int index) {
-		
-	}
-	
-	public void setNumbers(int LEN) {
-		for(int i=0; i<rArr.length; i++) { // 랜덤 중복 제거
-			rArr[i] = (int)(Math.random() * 9)+1;
+	// 숫자를 입력받는 기능 , 입력을 받기만 하는 것 myArr에 넣어 주기만 하면 됨 리턴 x
+	public void setNumbers() { // 내가 입력한 숫자값을 입력을 받는다
+		for(int i=0; i<myArr.length; i++) { // 
+			System.out.printf("값%d :\n ",i+1);
+			String val = sc.next();
+			try { // 오류 체크 (여기는 중복 체크가 아니다)
+				myArr[i] = Integer.parseInt(val); // 문자열로 받은 값을 변환, 에러가 난다면 문자,숫자가 아닌 한글이나 등등
+			} catch(Exception e) {
+				i--; // 오류 체크 (여기는 중복 체크가 아니다)
+				System.out.println("범위 밖 숫자를 입력 하셨습니다.");
+				continue;
+			}
 			for(int j=0; j<i; j++) {
-				if(rArr[i] == rArr[j]){
-					i--; 
+				if(myArr[j] == myArr[i]) {
+					System.out.println("중복된 숫자를 입력 하셨습니다.");
+					i--;
 					break;
 				}
 			}
 		}
-		for(int i=0; i<LEN; i++) {
-			System.out.println(rArr[i]);
-		}
+		System.out.println(Arrays.toString(myArr)); // 
 	}
 	
-	void ErrorMessage(int LEN) {
-		while(true) { // 오류 입력 경고메세지 출력
-			int strike=0;
-			int ball=0;
-			for(int i=0; i<LEN; i++) {
-				System.out.printf("값%d :\n ",i+1);
-				myArr[i] = sc.nextInt();
-				if(myArr[i]<=0 || 9<myArr[i] ) {
-					System.out.println("범위 밖 숫자를 입력 하셨습니다.");
-					i--;
-					continue;
-				}
-				for(int j=0; j<i; j++) {
-					if(myArr[j] == myArr[i]) {
-						System.out.println("중복된 숫자를 입력 하셨습니다.");
-						i--;
-						continue;
-					}
-				}
-			}
-			
-			for(int i=0; i<LEN; i++) { // 랜덤숫자와 사용자 숫자를 비교
-				if(myArr[i] == rArr[i]) {
-					strike++;
-					continue;
-				}
-				for(int j=0; j<LEN; j++) {
-					if(myArr[i] == rArr[j]) {
-						ball++;
-					}
-				}
-			}
-			System.out.printf("S : %d B : %d O : %d\n",strike,ball,LEN-strike-ball);
-			if(strike==LEN) {
-				break;
-			}
-		}
+	public int getMyNum(int index) { // 소괄호의 값을 받아서 
+		return myArr[index]; // 내가 입력한 값의 인덱스를 리턴해줌
 	}
-
 }

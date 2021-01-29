@@ -34,7 +34,7 @@ public class Baseball {
 	}
 	
 	private void setRandom() { // 랜덤 중복 제거
-		int max = 9;
+		int max = 9; // 변수는 중괄호를 닫으면 사라진다, 가져가고 싶으면 필드,게터세터로 받아야한다
 		int min = 1;
 		for(int i=0; i<rArr.length; i++) {
 			rArr[i] = (int)(Math.random() * (max - min + 1))+min;
