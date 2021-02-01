@@ -17,18 +17,18 @@ public class TryCatch {
 		System.out.println(1 + 2 + 3);
 		System.out.println(1 + 2 + "3");
 		
-		Animal animal = new Animal();
-		Cat cat = new Cat();
-		animal = cat;
-		
-		try {
-			Dog dog = (Dog)animal;
-		} catch(Exception e) {
-			e.printStackTrace(); 
-			System.out.println("문제 발생 했습니다.");
-		} finally { 
-			System.out.println("형변환 시도 종료");
-		}
+////		Animal animal = new Animal();
+//		Cat cat = new Cat();
+//		animal = cat;
+//		
+//		try {
+//			Dog dog = (Dog)animal;
+//		} catch(Exception e) {
+//			e.printStackTrace(); 
+//			System.out.println("문제 발생 했습니다.");
+//		} finally { 
+//			System.out.println("형변환 시도 종료");
+//		}
 		
 		// 예외처리 기본형
 		try {

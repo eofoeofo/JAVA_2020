@@ -8,7 +8,7 @@ public class MusicPlayer implements AkmuAlbum, IUAlbum { // 항상! Override를 
 		// 자식의 접근제한자가 부모보다 작을 수 없다. 그래서 자식에게 public이상의 접근제한자가 붙어야한다. 
 		System.out.println("항해 앨범을 재생 합니다.");
 	}
-	@Override
+	@Override // 
 	public void stopAkmuAlbum() {
 		System.out.println("항해 앨범을 재생 합니다.");
 	}
