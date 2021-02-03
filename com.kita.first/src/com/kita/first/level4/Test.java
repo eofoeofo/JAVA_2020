@@ -3,41 +3,41 @@ package com.kita.first.level4;
 public class Test {
 	public static void main(String[] args) {
 		
-//		// 한곳에서만 쓰는 경우에 익명 개체는 효율적이다. 깔끔하다.
-//		// 자식 메소드를 만들고 뭐하고 뭐하는게 복잡 하기에 익명개체는 중괄호 안에서 해결할 수 있기때문에 효율적이다.
-//		// 한 클래스, 재 사용 할 일 없을 때, 이 클래스를 한 번만 쓸 경우.
-//		//			     부모타입
-//		Parent p = new Parent() { // 익명 개체. 타입 없음 , 부모타입의 변수를 받아야한다 
-//			int childField; // 필드 생성 가능
-//			
-//			void childMethod() {
-//				Parent childVar = new Parent() {
-//					@Override
-//					void parentMethod() {
-//						System.out.println("2");
-//					}
-//				}
-//			}; // 메소드 생성 가능
-//			void childMethod2(Parent parent) {
-//				
-//			}
-//			
-//			@Override // Override 가능
-//			void parentMethod() {
-//				System.out.println("자식 객체 입니다");
-//			};
-//		}; /// 세미콜론존재, 이클립스가 무언가 실행한다고 생각하기 때문에 필요함
-////		AkmuAlbum alb = new MusicPlayer();
-////		alb.playAkmuAlbum();
-//		p.parentMethod(); // 객체가 들어갈 수 있는, 필드 매개변수에도 들어갈수있다
-//		//
-//		Child child = new Child();
-//		child.childMethod();
-//		child.childMethod2(new Parent() {
-//			@Override
-//			void parentMethod() {};
-//		});
-//		
+		// 한곳에서만 쓰는 경우에 익명 개체는 효율적이다. 깔끔하다.
+		// 자식 메소드를 만들고 뭐하고 뭐하는게 복잡 하기에 익명개체는 중괄호 안에서 해결할 수 있기때문에 효율적이다.
+		// 한 클래스, 재 사용 할 일 없을 때, 이 클래스를 한 번만 쓸 경우.
+		//			     부모타입
+		Parent p = new Parent() { // 익명 개체. 타입 없음 , 부모타입의 변수를 받아야한다 
+			int childField; // 필드 생성 가능
+			
+			void childMethod() {
+				Parent childVar = new Parent() {
+					@Override
+					void parentMethod() {
+						System.out.println("2");
+					}
+				}
+			}; // 메소드 생성 가능
+			void childMethod2(Parent parent) {
+				
+			}
+			
+			@Override // Override 가능
+			void parentMethod() {
+				System.out.println("자식 객체 입니다");
+			};
+		}; /// 세미콜론존재, 이클립스가 무언가 실행한다고 생각하기 때문에 필요함
+//		AkmuAlbum alb = new MusicPlayer();
+//		alb.playAkmuAlbum();
+		p.parentMethod(); // 객체가 들어갈 수 있는, 필드 매개변수에도 들어갈수있다
+		//
+		Child child = new Child();
+		child.childMethod();
+		child.childMethod2(new Parent() {
+			@Override
+			void parentMethod() {};
+		});
+		
 //		
 //		// throws를 계속 다른 클래스에 던져줘도 되는데, main메소드에서는 무조건 처리 해야한다.
 //		ThrowsException te = new ThrowsException(); // throws 사용 하는 법

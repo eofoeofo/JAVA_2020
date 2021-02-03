@@ -34,8 +34,11 @@ public class ThrowsException {
 		}
 	}
 
-	public void parseInputStrToInt() {
-		// TODO Auto-generated method stub
+	public void parseInputStrToInt() throws NumberFormatException, Exception{ // throws, 던져주기 
+		System.out.println("숫자를 입력해 주세요 : ");
+		String str = sc.next();  // 2가지 방법
+		int num ;
+		num = Integer.parseInt(str);
 		
 	}
 }
